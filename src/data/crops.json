@@ -1,0 +1,212 @@
+[
+  {
+    "id": "paddy",
+    "name": "Paddy (Rice)",
+    "season": "Kharif",
+    "durationDays": 120,
+    "soil": ["Clay", "Loam"],
+    "pH": "5.5 – 7.5",
+    "weather": {
+      "temp": "20–35°C",
+      "rainfall": "1000–1500 mm",
+      "idealTempMin": 20,
+      "idealTempMax": 35,
+      "idealRain": 1000
+    },
+    "gddBase": 10,
+    "irrigationIntervalDays": 7,
+    "fertilizerSchedule": [
+      { "stage": "Basal", "daysAfterSowing": 0, "nitrogen": 30, "phosphorus": 20, "potassium": 20 },
+      { "stage": "Tillering", "daysAfterSowing": 25, "nitrogen": 30, "phosphorus": 0, "potassium": 20 },
+      { "stage": "Panicle initiation", "daysAfterSowing": 55, "nitrogen": 30, "phosphorus": 0, "potassium": 20 }
+    ],
+    "phases": [
+  {
+    "key": "land_prep",
+    "label": "Land Preparation",
+    "offset": -21,
+    "duration": 7,
+    "icon": "Leaf",
+    "notes": "Plough and puddle the field; ensure standing water."
+  },
+  {
+    "key": "nursery",
+    "label": "Nursery Raising",
+    "offset": -14,
+    "duration": 14,
+    "icon": "Leaf",
+    "notes": "Maintain uniform moisture; use treated seeds."
+  },
+  {
+    "key": "transplant",
+    "label": "Transplanting",
+    "offset": 0,
+    "duration": 3,
+    "icon": "CalendarCheck2",
+    "notes": "Transplant 20–25 day seedlings at 20×15 cm spacing."
+  },
+  {
+    "key": "establishment",
+    "label": "Crop Establishment",
+    "offset": 3,
+    "duration": 10,
+    "icon": "Leaf",
+    "notes": "Keep 3–5 cm water; check survival and gaps."
+  },
+  {
+    "key": "irrigation",
+    "label": "Irrigation & Weeding",
+    "offset": 14,
+    "duration": 80,
+    "icon": "Droplets",
+    "notes": "Irrigate regularly and weed at 20–40 DAS."
+  },
+  {
+    "key": "fertilizer",
+    "label": "Fertilizer Top Dressing",
+    "offset": 25,
+    "duration": 2,
+    "icon": "Leaf",
+    "notes": "Apply urea after draining water; avoid flooding."
+  },
+  {
+    "key": "pest",
+    "label": "Pest & Disease Monitoring",
+    "offset": 40,
+    "duration": 40,
+    "icon": "Bug",
+    "notes": "Check for stem borer, leaf folder, and blast."
+  },
+  {
+    "key": "flowering",
+    "label": "Flowering & Grain Filling",
+    "offset": 80,
+    "duration": 20,
+    "icon": "Leaf",
+    "notes": "Maintain shallow water; avoid stress."
+  },
+  {
+    "key": "ripening",
+    "label": "Ripening Stage",
+    "offset": 105,
+    "duration": 10,
+    "icon": "Leaf",
+    "notes": "Stop irrigation; grains start to yellow."
+  },
+  {
+    "key": "harvest",
+    "label": "Harvest",
+    "offset": 115,
+    "duration": 5,
+    "icon": "Warehouse",
+    "notes": "Harvest when 80% grains are golden; dry thoroughly."
+  },
+  {
+    "key": "post",
+    "label": "Post-Harvest",
+    "offset": 120,
+    "duration": 7,
+    "icon": "Warehouse",
+    "notes": "Clean and sun-dry grains to 12% moisture for storage."
+  }
+],
+
+    "sowingWindow": { "from": { "m": 6, "d": 10 }, "to": { "m": 7, "d": 15 } }
+  },
+  {
+    "id": "maize",
+    "name": "Maize",
+    "season": "Kharif",
+    "durationDays": 100,
+    "soil": ["Loam", "Sandy"],
+    "pH": "5.8 – 7.0",
+    "weather": { "temp": "18–32°C", "rainfall": "500–800 mm", "idealTempMin": 18, "idealTempMax": 32, "idealRain": 600 },
+    "gddBase": 8,
+    "irrigationIntervalDays": 6,
+    "fertilizerSchedule": [
+      { "stage": "Basal", "daysAfterSowing": 0, "nitrogen": 40, "phosphorus": 30, "potassium": 20 },
+      { "stage": "Knee High", "daysAfterSowing": 25, "nitrogen": 40, "phosphorus": 0, "potassium": 20 },
+      { "stage": "Tasseling", "daysAfterSowing": 55, "nitrogen": 40, "phosphorus": 0, "potassium": 20 }
+    ],
+    "phases": [
+      { "key": "land_prep", "label": "Land Preparation", "offset": -10, "duration": 5, "icon": "Leaf", "notes": "Plough 2–3 times, apply manure." },
+      { "key": "sowing", "label": "Sowing", "offset": 0, "duration": 1, "icon": "CalendarCheck2", "notes": "Sow seeds 3–5 cm deep at 60×20 cm spacing." },
+      { "key": "irrigation", "label": "Irrigation", "offset": 5, "duration": 70, "icon": "Droplets", "notes": "Avoid drought during flowering; irrigate every 6–7 days." },
+      { "key": "pest", "label": "Pest Watch", "offset": 30, "duration": 30, "icon": "Bug", "notes": "Monitor fall armyworm and stem borer." },
+      { "key": "harvest", "label": "Harvest", "offset": 95, "duration": 5, "icon": "Warehouse", "notes": "Harvest when husk turns brown and kernels are hard." }
+    ],
+    "sowingWindow": { "from": { "m": 6, "d": 15 }, "to": { "m": 7, "d": 15 } }
+  },
+  {
+    "id": "wheat",
+    "name": "Wheat",
+    "season": "Rabi",
+    "durationDays": 140,
+    "soil": ["Loam", "Silt"],
+    "pH": "6.0 – 7.0",
+    "weather": { "temp": "10–25°C", "rainfall": "350–600 mm", "idealTempMin": 10, "idealTempMax": 25, "idealRain": 450 },
+    "gddBase": 4,
+    "irrigationIntervalDays": 10,
+    "fertilizerSchedule": [
+      { "stage": "Basal", "daysAfterSowing": 0, "nitrogen": 40, "phosphorus": 20, "potassium": 20 },
+      { "stage": "Crown Root", "daysAfterSowing": 25, "nitrogen": 40, "phosphorus": 0, "potassium": 20 },
+      { "stage": "Booting", "daysAfterSowing": 65, "nitrogen": 40, "phosphorus": 0, "potassium": 20 }
+    ],
+    "phases": [
+      { "key": "land_prep", "label": "Land Preparation", "offset": -15, "duration": 7, "icon": "Leaf", "notes": "Plough well to ensure fine tilth." },
+      { "key": "sowing", "label": "Sowing", "offset": 0, "duration": 2, "icon": "CalendarCheck2", "notes": "Use certified seeds; maintain spacing of 20×10 cm." },
+      { "key": "irrigation", "label": "Irrigation", "offset": 10, "duration": 90, "icon": "Droplets", "notes": "Provide irrigation at crown root and milking stages." },
+      { "key": "harvest", "label": "Harvest", "offset": 130, "duration": 7, "icon": "Warehouse", "notes": "Harvest when grains harden and moisture is <20%." }
+    ],
+    "sowingWindow": { "from": { "m": 11, "d": 5 }, "to": { "m": 12, "d": 10 } }
+  },
+  {
+    "id": "cotton",
+    "name": "Cotton",
+    "season": "Kharif",
+    "durationDays": 180,
+    "soil": ["Black Cotton", "Loam"],
+    "pH": "6.5 – 7.5",
+    "weather": { "temp": "21–32°C", "rainfall": "500–1000 mm", "idealTempMin": 21, "idealTempMax": 32, "idealRain": 700 },
+    "gddBase": 12,
+    "irrigationIntervalDays": 14,
+    "fertilizerSchedule": [
+      { "stage": "Basal", "daysAfterSowing": 0, "nitrogen": 60, "phosphorus": 40, "potassium": 40 },
+      { "stage": "Square Formation", "daysAfterSowing": 45, "nitrogen": 40, "phosphorus": 0, "potassium": 20 },
+      { "stage": "Flowering", "daysAfterSowing": 90, "nitrogen": 30, "phosphorus": 0, "potassium": 30 }
+    ],
+    "phases": [
+      { "key": "land_prep", "label": "Land Preparation", "offset": -15, "duration": 7, "icon": "Leaf", "notes": "Deep ploughing and manuring." },
+      { "key": "sowing", "label": "Sowing", "offset": 0, "duration": 3, "icon": "CalendarCheck2", "notes": "Sow seeds at 75×45 cm spacing." },
+      { "key": "irrigation", "label": "Irrigation", "offset": 10, "duration": 120, "icon": "Droplets", "notes": "Irrigate every 10–15 days depending on rainfall." },
+      { "key": "pest", "label": "Pest Watch", "offset": 60, "duration": 90, "icon": "Bug", "notes": "Check for bollworm; spray biological control." },
+      { "key": "harvest", "label": "Harvest", "offset": 170, "duration": 10, "icon": "Warehouse", "notes": "Pick fully opened bolls carefully." }
+    ],
+    "sowingWindow": { "from": { "m": 6, "d": 1 }, "to": { "m": 7, "d": 15 } }
+  },
+  {
+    "id": "sugarcane",
+    "name": "Sugarcane",
+    "season": "Annual",
+    "durationDays": 365,
+    "soil": ["Loam", "Clay"],
+    "pH": "6.0 – 8.0",
+    "weather": { "temp": "20–38°C", "rainfall": "800–1200 mm", "idealTempMin": 20, "idealTempMax": 38, "idealRain": 900 },
+    "gddBase": 15,
+    "irrigationIntervalDays": 10,
+    "fertilizerSchedule": [
+      { "stage": "Basal", "daysAfterSowing": 0, "nitrogen": 60, "phosphorus": 40, "potassium": 40 },
+      { "stage": "Tillering", "daysAfterSowing": 90, "nitrogen": 40, "phosphorus": 0, "potassium": 20 },
+      { "stage": "Grand Growth", "daysAfterSowing": 180, "nitrogen": 40, "phosphorus": 0, "potassium": 40 }
+    ],
+    "phases": [
+      { "key": "land_prep", "label": "Land Preparation", "offset": -30, "duration": 10, "icon": "Leaf", "notes": "Deep ploughing and leveling; apply compost or FYM." },
+      { "key": "planting", "label": "Planting", "offset": 0, "duration": 7, "icon": "CalendarCheck2", "notes": "Plant healthy setts 30 cm apart in furrows." },
+      { "key": "irrigation", "label": "Irrigation", "offset": 7, "duration": 320, "icon": "Droplets", "notes": "Irrigate every 10–12 days depending on soil." },
+      { "key": "pest", "label": "Pest & Disease Watch", "offset": 90, "duration": 200, "icon": "Bug", "notes": "Monitor for shoot borer, scale insect; apply neem extract." },
+      { "key": "ripening", "label": "Ripening", "offset": 300, "duration": 45, "icon": "Leaf", "notes": "Reduce irrigation to enhance sugar content." },
+      { "key": "harvest", "label": "Harvest", "offset": 345, "duration": 10, "icon": "Warehouse", "notes": "Harvest when cane is mature and sweet." }
+    ],
+    "sowingWindow": { "from": { "m": 2, "d": 1 }, "to": { "m": 3, "d": 15 } }
+  }
+]

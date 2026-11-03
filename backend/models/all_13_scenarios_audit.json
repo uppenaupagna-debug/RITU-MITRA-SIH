@@ -1,0 +1,132 @@
+[
+  {
+    "num": 1,
+    "input": "Healthy Plant Leaf (PlantVillage Tomato___healthy)",
+    "expected": "Classified as Tomato; identified as healthy or low severity",
+    "backend_status": "success",
+    "prediction": "Healthy Tomato Foliage",
+    "confidence": "70.94%",
+    "explanation": "No chemical sprays required. Plant is in prime health.",
+    "correct": true
+  },
+  {
+    "num": 2,
+    "input": "Infected Tomato Leaf (demo-leaf.jpeg)",
+    "expected": "Tomato Leaf Mold (Tomato) or high-confidence tomato blight",
+    "backend_status": "success",
+    "prediction": "Tomato Leaf Mold",
+    "confidence": "59.81%",
+    "explanation": "Clear IPM fungal treatment & ventilation measures shown",
+    "correct": true
+  },
+  {
+    "num": 3,
+    "input": "Infected Potato Leaf (Potato___Early_blight)",
+    "expected": "Potato Early Blight with target-spot symptoms and fungicide care",
+    "backend_status": "success",
+    "prediction": "Early Blight of Potato",
+    "confidence": "99.48%",
+    "explanation": "Circular brown lesions with characteristic concentric rings ('target-board' pattern)",
+    "correct": true
+  },
+  {
+    "num": 4,
+    "input": "Supported Crop: Corn (Common Rust)",
+    "expected": "Corn Common Rust identified with rust pustule symptoms",
+    "backend_status": "success",
+    "prediction": "Common Rust of Maize",
+    "confidence": "85.33%",
+    "explanation": "Small, oval to elongate cinnamon-brown pustules on both leaf surfaces",
+    "correct": true
+  },
+  {
+    "num": 5,
+    "input": "Human Face / Skin Tone Photograph",
+    "expected": "Rejected as human or non-plant; NO disease assigned",
+    "backend_status": "rejected_human",
+    "prediction": null,
+    "confidence": "N/A",
+    "explanation": "Invalid image: Detected a person or human face. Please upload a clear photograph of a crop leaf, stem, or plant.",
+    "correct": true
+  },
+  {
+    "num": 6,
+    "input": "Animal / Mammal Fur Tone",
+    "expected": "Rejected as non-plant; NO disease assigned",
+    "backend_status": "uncertain",
+    "prediction": null,
+    "confidence": "N/A",
+    "explanation": "Unable to identify the disease reliably. Please upload a clearer, well-lit photo of the affected plant tissue, or consult an agricultural extension officer.",
+    "correct": true
+  },
+  {
+    "num": 7,
+    "input": "Vehicle / Metallic Blue Object",
+    "expected": "Rejected: Plant not detected",
+    "backend_status": "rejected_not_plant",
+    "prediction": null,
+    "confidence": "N/A",
+    "explanation": "Plant not detected. Please upload a clear photograph of a crop leaf, bud, stem, or branch.",
+    "correct": true
+  },
+  {
+    "num": 8,
+    "input": "Clear Sky / Soil Background",
+    "expected": "Rejected: Plant not detected or blank",
+    "backend_status": "rejected_not_plant",
+    "prediction": null,
+    "confidence": "N/A",
+    "explanation": "Plant not detected. Please upload a clear photograph of a crop leaf, bud, stem, or branch.",
+    "correct": true
+  },
+  {
+    "num": 9,
+    "input": "Blank White Document / Scan",
+    "expected": "Rejected: Blank, solid, or low-contrast file",
+    "backend_status": "rejected_blank",
+    "prediction": null,
+    "confidence": "N/A",
+    "explanation": "Invalid image: Blank, solid, or low-contrast file. Please upload a clear photo of a crop plant.",
+    "correct": true
+  },
+  {
+    "num": 10,
+    "input": "Blurry / Low-Variance Grey Image",
+    "expected": "Rejected: Low variance / unclear photo request",
+    "backend_status": "rejected_blank",
+    "prediction": null,
+    "confidence": "N/A",
+    "explanation": "Invalid image: Blank, solid, or low-contrast file. Please upload a clear photo of a crop plant.",
+    "correct": true
+  },
+  {
+    "num": 11,
+    "input": "Unsupported Crop (OOD synthetic foliage)",
+    "expected": "Uncertain prediction policy (<38% confidence trigger) with advisory to consult MAO",
+    "backend_status": "uncertain",
+    "prediction": null,
+    "confidence": "19.84%",
+    "explanation": "Unable to identify the disease reliably. Please upload a clearer, well-lit photo of the affected plant tissue, or consult an agricultural extension officer.",
+    "correct": true
+  },
+  {
+    "num": 12,
+    "input": "Unsupported Plant Part ('stem')",
+    "expected": "Rejected: Out of validated model scope (leaf-only certified)",
+    "backend_status": "unsupported_part",
+    "prediction": null,
+    "confidence": "N/A",
+    "explanation": "Out of validated model scope: Current certified AI model is trained for leaf analysis. Stem diagnoses require manual agronomic inspection. Please upload a clear leaf photograph.",
+    "correct": true
+  },
+  {
+    "num": 13,
+    "input": "Corrupt Byte Stream",
+    "expected": "HTTP 400 Bad Request with clear format error",
+    "backend_status": "HTTP 400",
+    "prediction": null,
+    "confidence": "N/A",
+    "explanation": "Invalid image file format. Supported: JPG, PNG, WebP.",
+    "correct": true
+  }
+]

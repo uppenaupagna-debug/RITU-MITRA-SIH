@@ -1,0 +1,27 @@
+# dependencies
+node_modules/
+
+# production build
+dist/
+
+# env files
+.env
+.env.local
+
+# IDE and system files
+.vscode/
+.DS_Store
+
+# Large binaries and installers
+*.dmg
+*.zip
+*.pt
+
+# Python virtualenv and cache
+.venv/
+backend/.venv/
+__pycache__/
+*.py[cod]
+*.pkl
+backend/openmeteo_cache.json
+screenshots/

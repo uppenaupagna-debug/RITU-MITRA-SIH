@@ -1,0 +1,289 @@
+[debug] [2025-11-08T16:44:19.010Z] ----------------------------------------------------------------------
+[debug] [2025-11-08T16:44:19.016Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\LENOVO\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start --only functions
+[debug] [2025-11-08T16:44:19.017Z] CLI Version:   14.24.1
+[debug] [2025-11-08T16:44:19.017Z] Platform:      win32
+[debug] [2025-11-08T16:44:19.017Z] Node Version:  v22.19.0
+[debug] [2025-11-08T16:44:19.017Z] Time:          Sat Nov 08 2025 22:14:19 GMT+0530 (India Standard Time)
+[debug] [2025-11-08T16:44:19.018Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-11-08T16:44:19.741Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-11-08T16:44:19.742Z] > authorizing via signed-in user (8786srimannarayana@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2025-11-08T16:44:19.769Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-11-08T16:44:19.769Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2025-11-08T16:44:19.784Z] Emulator locator file path: C:\Users\LENOVO\AppData\Local\Temp\hub-agriassistdashboard.json
+[debug] [2025-11-08T16:44:19.785Z] [hub] writing locator at C:\Users\LENOVO\AppData\Local\Temp\hub-agriassistdashboard.json
+[debug] [2025-11-08T16:44:19.849Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-11-08T16:44:19.850Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-11-08T16:44:19.851Z] [tasks] Cloud Tasks Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-11-08T16:44:19.851Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}],"tasks":[{"address":"127.0.0.1","family":"IPv4","port":9499}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: apphosting, auth, firestore, database, hosting, pubsub, storage, dataconnect {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mapphosting, auth, firestore, database, hosting, pubsub, storage, dataconnect\u001b[22m"}}
+[debug] [2025-11-08T16:44:19.898Z] defaultcredentials: writing to file C:\Users\LENOVO\AppData\Roaming\firebase\8786srimannarayana_gmail_com_application_default_credentials.json
+[debug] [2025-11-08T16:44:19.961Z] Setting GAC to C:\Users\LENOVO\AppData\Roaming\firebase\8786srimannarayana_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\LENOVO\\AppData\\Roaming\\firebase\\8786srimannarayana_gmail_com_application_default_credentials.json"}}
+[debug] [2025-11-08T16:44:19.963Z] Checked if tokens are valid: true, expires at: 1762622753627
+[debug] [2025-11-08T16:44:19.964Z] Checked if tokens are valid: true, expires at: 1762622753627
+[debug] [2025-11-08T16:44:19.967Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/agriassistdashboard/adminSdkConfig [none]
+[debug] [2025-11-08T16:44:20.657Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/agriassistdashboard/adminSdkConfig 200
+[debug] [2025-11-08T16:44:20.657Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/agriassistdashboard/adminSdkConfig {"projectId":"agriassistdashboard","storageBucket":"agriassistdashboard.firebasestorage.app"}
+[info] i  ui: downloading ui-v1.15.0.zip... {"metadata":{"emulator":{"name":"ui"},"message":"downloading ui-v1.15.0.zip..."}}
+[debug] [2025-11-08T16:44:20.703Z] >>> [apiv2][query] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.15.0.zip 
+[debug] [2025-11-08T16:44:21.063Z] <<< [apiv2][status] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.15.0.zip 200
+[debug] [2025-11-08T16:44:21.063Z] <<< [apiv2][body] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.15.0.zip [stream]
+[debug] [2025-11-08T16:44:21.618Z] Data is 3538469
+[debug] [2025-11-08T16:44:21.618Z] [unzip] Entry: client/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2025-11-08T16:44:21.618Z] [unzip] Processing entry: client\
+[debug] [2025-11-08T16:44:21.618Z] [unzip] mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\
+[debug] [2025-11-08T16:44:21.619Z] [unzip] Entry: client/favicon-16x16.png (compressed_size=293 bytes, uncompressed_size=293 bytes)
+[debug] [2025-11-08T16:44:21.620Z] [unzip] Processing entry: client\favicon-16x16.png
+[debug] [2025-11-08T16:44:21.620Z] [unzip] else mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client
+[debug] [2025-11-08T16:44:21.620Z] [unzip] Writing file: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\favicon-16x16.png
+[debug] [2025-11-08T16:44:21.623Z] [unzip] Entry: client/safari-pinned-tab.svg (compressed_size=1433 bytes, uncompressed_size=2611 bytes)
+[debug] [2025-11-08T16:44:21.623Z] [unzip] Processing entry: client\safari-pinned-tab.svg
+[debug] [2025-11-08T16:44:21.623Z] [unzip] else mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client
+[debug] [2025-11-08T16:44:21.624Z] [unzip] deflating: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\safari-pinned-tab.svg
+[debug] [2025-11-08T16:44:21.631Z] [unzip] Entry: client/favicon.ico (compressed_size=2933 bytes, uncompressed_size=13294 bytes)
+[debug] [2025-11-08T16:44:21.631Z] [unzip] Processing entry: client\favicon.ico
+[debug] [2025-11-08T16:44:21.632Z] [unzip] else mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client
+[debug] [2025-11-08T16:44:21.632Z] [unzip] deflating: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\favicon.ico
+[debug] [2025-11-08T16:44:21.635Z] [unzip] Entry: client/index.html (compressed_size=1364 bytes, uncompressed_size=3071 bytes)
+[debug] [2025-11-08T16:44:21.635Z] [unzip] Processing entry: client\index.html
+[debug] [2025-11-08T16:44:21.635Z] [unzip] else mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client
+[debug] [2025-11-08T16:44:21.636Z] [unzip] deflating: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\index.html
+[debug] [2025-11-08T16:44:21.638Z] [unzip] Entry: client/android-chrome-192x192.png (compressed_size=2684 bytes, uncompressed_size=2684 bytes)
+[debug] [2025-11-08T16:44:21.638Z] [unzip] Processing entry: client\android-chrome-192x192.png
+[debug] [2025-11-08T16:44:21.638Z] [unzip] else mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client
+[debug] [2025-11-08T16:44:21.640Z] [unzip] Writing file: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\android-chrome-192x192.png
+[debug] [2025-11-08T16:44:21.642Z] [unzip] Entry: client/apple-touch-icon.png (compressed_size=2123 bytes, uncompressed_size=2152 bytes)
+[debug] [2025-11-08T16:44:21.642Z] [unzip] Processing entry: client\apple-touch-icon.png
+[debug] [2025-11-08T16:44:21.642Z] [unzip] else mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client
+[debug] [2025-11-08T16:44:21.642Z] [unzip] deflating: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\apple-touch-icon.png
+[debug] [2025-11-08T16:44:21.645Z] [unzip] Entry: client/android-chrome-512x512.png (compressed_size=5369 bytes, uncompressed_size=5411 bytes)
+[debug] [2025-11-08T16:44:21.645Z] [unzip] Processing entry: client\android-chrome-512x512.png
+[debug] [2025-11-08T16:44:21.645Z] [unzip] else mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client
+[debug] [2025-11-08T16:44:21.646Z] [unzip] deflating: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\android-chrome-512x512.png
+[debug] [2025-11-08T16:44:21.648Z] [unzip] Entry: client/manifest.json (compressed_size=245 bytes, uncompressed_size=551 bytes)
+[debug] [2025-11-08T16:44:21.648Z] [unzip] Processing entry: client\manifest.json
+[debug] [2025-11-08T16:44:21.648Z] [unzip] else mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client
+[debug] [2025-11-08T16:44:21.648Z] [unzip] deflating: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\manifest.json
+[debug] [2025-11-08T16:44:21.651Z] [unzip] Entry: client/robots.txt (compressed_size=26 bytes, uncompressed_size=26 bytes)
+[debug] [2025-11-08T16:44:21.651Z] [unzip] Processing entry: client\robots.txt
+[debug] [2025-11-08T16:44:21.651Z] [unzip] else mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client
+[debug] [2025-11-08T16:44:21.651Z] [unzip] Writing file: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\robots.txt
+[debug] [2025-11-08T16:44:21.652Z] [unzip] Entry: client/mstile-150x150.png (compressed_size=2034 bytes, uncompressed_size=2034 bytes)
+[debug] [2025-11-08T16:44:21.653Z] [unzip] Processing entry: client\mstile-150x150.png
+[debug] [2025-11-08T16:44:21.653Z] [unzip] else mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client
+[debug] [2025-11-08T16:44:21.653Z] [unzip] Writing file: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\mstile-150x150.png
+[debug] [2025-11-08T16:44:21.655Z] [unzip] Entry: client/assets/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2025-11-08T16:44:21.656Z] [unzip] Processing entry: client\assets\
+[debug] [2025-11-08T16:44:21.656Z] [unzip] mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\
+[debug] [2025-11-08T16:44:21.657Z] [unzip] Entry: client/assets/index-BX-A56oj.js (compressed_size=582089 bytes, uncompressed_size=2092775 bytes)
+[debug] [2025-11-08T16:44:21.657Z] [unzip] Processing entry: client\assets\index-BX-A56oj.js
+[debug] [2025-11-08T16:44:21.657Z] [unzip] else mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets
+[debug] [2025-11-08T16:44:21.657Z] [unzip] deflating: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\index-BX-A56oj.js
+[debug] [2025-11-08T16:44:21.681Z] [unzip] Entry: client/assets/index-CjB9C900.css (compressed_size=35979 bytes, uncompressed_size=298654 bytes)
+[debug] [2025-11-08T16:44:21.681Z] [unzip] Processing entry: client\assets\index-CjB9C900.css
+[debug] [2025-11-08T16:44:21.681Z] [unzip] else mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets
+[debug] [2025-11-08T16:44:21.682Z] [unzip] deflating: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\index-CjB9C900.css
+[debug] [2025-11-08T16:44:21.686Z] [unzip] Entry: client/assets/index-BX-A56oj.js.map (compressed_size=2362482 bytes, uncompressed_size=10036679 bytes)
+[debug] [2025-11-08T16:44:21.686Z] [unzip] Processing entry: client\assets\index-BX-A56oj.js.map
+[debug] [2025-11-08T16:44:21.686Z] [unzip] else mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets
+[debug] [2025-11-08T16:44:21.687Z] [unzip] deflating: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\index-BX-A56oj.js.map
+[debug] [2025-11-08T16:44:21.779Z] [unzip] Entry: client/assets/extensions/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2025-11-08T16:44:21.779Z] [unzip] Processing entry: client\assets\extensions\
+[debug] [2025-11-08T16:44:21.780Z] [unzip] mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\extensions\
+[debug] [2025-11-08T16:44:21.780Z] [unzip] Entry: client/assets/extensions/default-extension.png (compressed_size=1646 bytes, uncompressed_size=1657 bytes)
+[debug] [2025-11-08T16:44:21.780Z] [unzip] Processing entry: client\assets\extensions\default-extension.png
+[debug] [2025-11-08T16:44:21.780Z] [unzip] else mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\extensions
+[debug] [2025-11-08T16:44:21.781Z] [unzip] deflating: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\extensions\default-extension.png
+[debug] [2025-11-08T16:44:21.783Z] [unzip] Entry: client/assets/img/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2025-11-08T16:44:21.783Z] [unzip] Processing entry: client\assets\img\
+[debug] [2025-11-08T16:44:21.783Z] [unzip] mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\img\
+[debug] [2025-11-08T16:44:21.784Z] [unzip] Entry: client/assets/img/database.png (compressed_size=29449 bytes, uncompressed_size=29988 bytes)
+[debug] [2025-11-08T16:44:21.784Z] [unzip] Processing entry: client\assets\img\database.png
+[debug] [2025-11-08T16:44:21.784Z] [unzip] else mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\img
+[debug] [2025-11-08T16:44:21.784Z] [unzip] deflating: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\img\database.png
+[debug] [2025-11-08T16:44:21.788Z] [unzip] Entry: client/assets/provider-icons/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2025-11-08T16:44:21.789Z] [unzip] Processing entry: client\assets\provider-icons\
+[debug] [2025-11-08T16:44:21.789Z] [unzip] mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons\
+[debug] [2025-11-08T16:44:21.790Z] [unzip] Entry: client/assets/provider-icons/auth_service_saml.svg (compressed_size=575 bytes, uncompressed_size=1226 bytes)
+[debug] [2025-11-08T16:44:21.790Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_saml.svg
+[debug] [2025-11-08T16:44:21.790Z] [unzip] else mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons
+[debug] [2025-11-08T16:44:21.791Z] [unzip] deflating: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons\auth_service_saml.svg
+[debug] [2025-11-08T16:44:21.793Z] [unzip] Entry: client/assets/provider-icons/auth_service_phone.svg (compressed_size=261 bytes, uncompressed_size=414 bytes)
+[debug] [2025-11-08T16:44:21.794Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_phone.svg
+[debug] [2025-11-08T16:44:21.794Z] [unzip] else mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons
+[debug] [2025-11-08T16:44:21.794Z] [unzip] deflating: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons\auth_service_phone.svg
+[debug] [2025-11-08T16:44:21.796Z] [unzip] Entry: client/assets/provider-icons/auth_service_facebook.svg (compressed_size=289 bytes, uncompressed_size=457 bytes)
+[debug] [2025-11-08T16:44:21.796Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_facebook.svg
+[debug] [2025-11-08T16:44:21.796Z] [unzip] else mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons
+[debug] [2025-11-08T16:44:21.797Z] [unzip] deflating: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons\auth_service_facebook.svg
+[debug] [2025-11-08T16:44:21.798Z] [unzip] Entry: client/assets/provider-icons/auth_service_game_center.svg (compressed_size=991 bytes, uncompressed_size=3921 bytes)
+[debug] [2025-11-08T16:44:21.799Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_game_center.svg
+[debug] [2025-11-08T16:44:21.799Z] [unzip] else mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons
+[debug] [2025-11-08T16:44:21.799Z] [unzip] deflating: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons\auth_service_game_center.svg
+[debug] [2025-11-08T16:44:21.801Z] [unzip] Entry: client/assets/provider-icons/auth_service_apple.svg (compressed_size=230 bytes, uncompressed_size=334 bytes)
+[debug] [2025-11-08T16:44:21.801Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_apple.svg
+[debug] [2025-11-08T16:44:21.801Z] [unzip] else mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons
+[debug] [2025-11-08T16:44:21.801Z] [unzip] deflating: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons\auth_service_apple.svg
+[debug] [2025-11-08T16:44:21.803Z] [unzip] Entry: client/assets/provider-icons/auth_service_github.svg (compressed_size=466 bytes, uncompressed_size=838 bytes)
+[debug] [2025-11-08T16:44:21.804Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_github.svg
+[debug] [2025-11-08T16:44:21.804Z] [unzip] else mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons
+[debug] [2025-11-08T16:44:21.804Z] [unzip] deflating: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons\auth_service_github.svg
+[debug] [2025-11-08T16:44:21.806Z] [unzip] Entry: client/assets/provider-icons/auth_service_mslive.svg (compressed_size=203 bytes, uncompressed_size=378 bytes)
+[debug] [2025-11-08T16:44:21.807Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_mslive.svg
+[debug] [2025-11-08T16:44:21.807Z] [unzip] else mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons
+[debug] [2025-11-08T16:44:21.807Z] [unzip] deflating: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons\auth_service_mslive.svg
+[debug] [2025-11-08T16:44:21.809Z] [unzip] Entry: client/assets/provider-icons/auth_service_yahoo.svg (compressed_size=577 bytes, uncompressed_size=1182 bytes)
+[debug] [2025-11-08T16:44:21.809Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_yahoo.svg
+[debug] [2025-11-08T16:44:21.809Z] [unzip] else mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons
+[debug] [2025-11-08T16:44:21.810Z] [unzip] deflating: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons\auth_service_yahoo.svg
+[debug] [2025-11-08T16:44:21.811Z] [unzip] Entry: client/assets/provider-icons/auth_service_twitter.svg (compressed_size=444 bytes, uncompressed_size=751 bytes)
+[debug] [2025-11-08T16:44:21.812Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_twitter.svg
+[debug] [2025-11-08T16:44:21.812Z] [unzip] else mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons
+[debug] [2025-11-08T16:44:21.812Z] [unzip] deflating: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons\auth_service_twitter.svg
+[debug] [2025-11-08T16:44:21.814Z] [unzip] Entry: client/assets/provider-icons/auth_service_play_games.svg (compressed_size=565 bytes, uncompressed_size=1173 bytes)
+[debug] [2025-11-08T16:44:21.814Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_play_games.svg
+[debug] [2025-11-08T16:44:21.814Z] [unzip] else mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons
+[debug] [2025-11-08T16:44:21.815Z] [unzip] deflating: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons\auth_service_play_games.svg
+[debug] [2025-11-08T16:44:21.816Z] [unzip] Entry: client/assets/provider-icons/auth_service_email.svg (compressed_size=228 bytes, uncompressed_size=326 bytes)
+[debug] [2025-11-08T16:44:21.817Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_email.svg
+[debug] [2025-11-08T16:44:21.817Z] [unzip] else mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons
+[debug] [2025-11-08T16:44:21.817Z] [unzip] deflating: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons\auth_service_email.svg
+[debug] [2025-11-08T16:44:21.819Z] [unzip] Entry: client/assets/provider-icons/auth_service_google.svg (compressed_size=409 bytes, uncompressed_size=720 bytes)
+[debug] [2025-11-08T16:44:21.819Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_google.svg
+[debug] [2025-11-08T16:44:21.819Z] [unzip] else mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons
+[debug] [2025-11-08T16:44:21.820Z] [unzip] deflating: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons\auth_service_google.svg
+[debug] [2025-11-08T16:44:21.822Z] [unzip] Entry: client/assets/provider-icons/auth_service_oidc.svg (compressed_size=414 bytes, uncompressed_size=858 bytes)
+[debug] [2025-11-08T16:44:21.822Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_oidc.svg
+[debug] [2025-11-08T16:44:21.822Z] [unzip] else mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons
+[debug] [2025-11-08T16:44:21.822Z] [unzip] deflating: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons\auth_service_oidc.svg
+[debug] [2025-11-08T16:44:21.824Z] [unzip] Entry: client/browserconfig.xml (compressed_size=491 bytes, uncompressed_size=822 bytes)
+[debug] [2025-11-08T16:44:21.825Z] [unzip] Processing entry: client\browserconfig.xml
+[debug] [2025-11-08T16:44:21.825Z] [unzip] else mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client
+[debug] [2025-11-08T16:44:21.825Z] [unzip] deflating: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\browserconfig.xml
+[debug] [2025-11-08T16:44:21.827Z] [unzip] Entry: client/favicon-32x32.png (compressed_size=475 bytes, uncompressed_size=475 bytes)
+[debug] [2025-11-08T16:44:21.827Z] [unzip] Processing entry: client\favicon-32x32.png
+[debug] [2025-11-08T16:44:21.827Z] [unzip] else mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client
+[debug] [2025-11-08T16:44:21.827Z] [unzip] Writing file: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\client\favicon-32x32.png
+[debug] [2025-11-08T16:44:21.828Z] [unzip] Entry: server/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2025-11-08T16:44:21.829Z] [unzip] Processing entry: server\
+[debug] [2025-11-08T16:44:21.829Z] [unzip] mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\server\
+[debug] [2025-11-08T16:44:21.829Z] [unzip] Entry: server/server.mjs.map (compressed_size=217845 bytes, uncompressed_size=944978 bytes)
+[debug] [2025-11-08T16:44:21.829Z] [unzip] Processing entry: server\server.mjs.map
+[debug] [2025-11-08T16:44:21.830Z] [unzip] else mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\server
+[debug] [2025-11-08T16:44:21.830Z] [unzip] deflating: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\server\server.mjs.map
+[debug] [2025-11-08T16:44:21.846Z] [unzip] Entry: server/server.mjs (compressed_size=276407 bytes, uncompressed_size=933701 bytes)
+[debug] [2025-11-08T16:44:21.846Z] [unzip] Processing entry: server\server.mjs
+[debug] [2025-11-08T16:44:21.846Z] [unzip] else mkdir: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\server
+[debug] [2025-11-08T16:44:21.846Z] [unzip] deflating: C:\Users\LENOVO\.cache\firebase\emulators\ui-v1.15.0\server\server.mjs
+[info] i  functions: Watching "D:\mita\agriassist\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"D:\\mita\\agriassist\\functions\" for Cloud Functions..."}}
+[debug] [2025-11-08T16:44:21.878Z] Validating nodejs source
+[debug] [2025-11-08T16:44:23.564Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^1.13.2",
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-11-08T16:44:23.565Z] Building nodejs source
+[debug] [2025-11-08T16:44:23.565Z] Failed to find version of module node: reached end of search path D:\mita\agriassist\functions\node_modules
+[info] +  functions: Using node@22 from host. 
+[debug] [2025-11-08T16:44:23.569Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-11-08T16:44:23.586Z] Found firebase-functions binary at 'D:\mita\agriassist\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8001
+
+[debug] [2025-11-08T16:44:25.019Z] Got response from /__/functions.yaml {"endpoints":{"getSoilData":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getSoilData"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] +  functions: Loaded functions definitions from source: getSoilData. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getSoilData."}}
+[info] +  functions[us-central1-getSoilData]: http function initialized (http://127.0.0.1:5001/agriassistdashboard/us-central1/getSoilData). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/agriassistdashboard/us-central1/getSoilData)."}}
+[debug] [2025-11-08T16:44:29.092Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: . If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub host: 127.0.0.1 port: 4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2025-11-08T16:45:24.640Z] [work-queue] {"queuedWork":["/agriassistdashboard/us-central1/getSoilData-2025-11-08T16:45:24.640Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-08T16:45:24.641Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/agriassistdashboard/us-central1/getSoilData-2025-11-08T16:45:24.640Z"],"workRunningCount":1}
+[debug] [2025-11-08T16:45:24.642Z] Accepted request GET /agriassistdashboard/us-central1/getSoilData --> us-central1-getSoilData
+[debug] [2025-11-08T16:45:24.649Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-11-08T16:45:24.650Z] [functions] Got req.url=/agriassistdashboard/us-central1/getSoilData, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/agriassistdashboard/us-central1/getSoilData, mapping to path=/"}}
+[debug] [2025-11-08T16:45:24.673Z] [worker-pool] addWorker(us-central1-getSoilData) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-getSoilData)"}}
+[debug] [2025-11-08T16:45:24.674Z] [worker-pool] Adding worker with key us-central1-getSoilData, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-getSoilData, total=1"}}
+[debug] [2025-11-08T16:45:27.514Z] [runtime-status] [4832] Resolved module firebase-admin {"declared":true,"installed":true,"version":"12.7.0","resolution":"D:\\mita\\agriassist\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"[runtime-status] [4832] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"D:\\\\mita\\\\agriassist\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2025-11-08T16:45:27.517Z] [runtime-status] [4832] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.6.0","resolution":"D:\\mita\\agriassist\\functions\\node_modules\\firebase-functions\\lib\\v2\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"[runtime-status] [4832] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.6.0\",\"resolution\":\"D:\\\\mita\\\\agriassist\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v2\\\\index.js\"}"}}
+[debug] [2025-11-08T16:45:27.518Z] [runtime-status] [4832] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"[runtime-status] [4832] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2025-11-08T16:45:27.519Z] [runtime-status] [4832] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.6.0","resolution":"D:\\mita\\agriassist\\functions\\node_modules\\firebase-functions\\lib\\v2\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"[runtime-status] [4832] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.6.0\",\"resolution\":\"D:\\\\mita\\\\agriassist\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v2\\\\index.js\"}"}}
+[debug] [2025-11-08T16:45:28.228Z] [runtime-status] [4832] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"[runtime-status] [4832] Checked functions.config() {\"config\":{}}"}}
+[debug] [2025-11-08T16:45:28.229Z] [runtime-status] [4832] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"6.6.0","resolution":"D:\\mita\\agriassist\\functions\\node_modules\\firebase-functions\\lib\\v2\\index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"[runtime-status] [4832] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"6.6.0\",\"resolution\":\"D:\\\\mita\\\\agriassist\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v2\\\\index.js\"}}"}}
+[debug] [2025-11-08T16:45:28.231Z] [runtime-status] [4832] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.6.0","resolution":"D:\\mita\\agriassist\\functions\\node_modules\\firebase-functions\\lib\\v2\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"[runtime-status] [4832] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.6.0\",\"resolution\":\"D:\\\\mita\\\\agriassist\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v2\\\\index.js\"}"}}
+[debug] [2025-11-08T16:45:28.241Z] [runtime-status] [4832] Resolved module firebase-admin {"declared":true,"installed":true,"version":"12.7.0","resolution":"D:\\mita\\agriassist\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"[runtime-status] [4832] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"D:\\\\mita\\\\agriassist\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2025-11-08T16:45:28.246Z] [runtime-status] [4832] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.6.0","resolution":"D:\\mita\\agriassist\\functions\\node_modules\\firebase-functions\\lib\\v2\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"[runtime-status] [4832] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.6.0\",\"resolution\":\"D:\\\\mita\\\\agriassist\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v2\\\\index.js\"}"}}
+[debug] [2025-11-08T16:45:28.246Z] [runtime-status] [4832] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"12.7.0","resolution":"D:\\mita\\agriassist\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"[runtime-status] [4832] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"D:\\\\mita\\\\agriassist\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}}"}}
+[debug] [2025-11-08T16:45:28.358Z] [runtime-status] [4832] Functions runtime initialized. {"cwd":"D:\\mita\\agriassist\\functions","node_version":"22.19.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"[runtime-status] [4832] Functions runtime initialized. {\"cwd\":\"D:\\\\mita\\\\agriassist\\\\functions\",\"node_version\":\"22.19.0\"}"}}
+[debug] [2025-11-08T16:45:28.358Z] [runtime-status] [4832] Listening to port: \\?\pipe\fire_emu_2b44e6539db0afd4 {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"[runtime-status] [4832] Listening to port: \\\\?\\pipe\\fire_emu_2b44e6539db0afd4"}}
+[debug] [2025-11-08T16:45:28.450Z] [worker-us-central1-getSoilData-4773f481-1543-435b-b0fd-310798ea6111]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"[worker-us-central1-getSoilData-4773f481-1543-435b-b0fd-310798ea6111]: IDLE"}}
+[debug] [2025-11-08T16:45:28.450Z] [worker-pool] submitRequest(triggerId=us-central1-getSoilData) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-getSoilData)"}}
+[info] i  functions: Beginning execution of "us-central1-getSoilData" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"Beginning execution of \"us-central1-getSoilData\""}}
+[debug] [2025-11-08T16:45:28.452Z] [worker-us-central1-getSoilData-4773f481-1543-435b-b0fd-310798ea6111]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"[worker-us-central1-getSoilData-4773f481-1543-435b-b0fd-310798ea6111]: BUSY"}}
+[debug] [2025-11-08T16:45:28.465Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-getSoilData" in 13.3568ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"Finished \"us-central1-getSoilData\" in 13.3568ms"}}
+[debug] [2025-11-08T16:45:28.467Z] [worker-us-central1-getSoilData-4773f481-1543-435b-b0fd-310798ea6111]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"[worker-us-central1-getSoilData-4773f481-1543-435b-b0fd-310798ea6111]: IDLE"}}
+[debug] [2025-11-08T16:45:28.468Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-11-08T16:45:28.468Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-11-08T16:45:28.469Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-08T16:45:28.602Z] Functions emulator received unknown request at path /favicon.ico
+[debug] [2025-11-08T16:46:56.132Z] [work-queue] {"queuedWork":["/agriassistdashboard/us-central1/getSoilData-2025-11-08T16:46:56.132Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-08T16:46:56.133Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/agriassistdashboard/us-central1/getSoilData-2025-11-08T16:46:56.132Z"],"workRunningCount":1}
+[debug] [2025-11-08T16:46:56.133Z] Accepted request GET /agriassistdashboard/us-central1/getSoilData?lat=16.993386073509612&lon=79.316785633564 --> us-central1-getSoilData
+[debug] [2025-11-08T16:46:56.139Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-11-08T16:46:56.140Z] [functions] Got req.url=/agriassistdashboard/us-central1/getSoilData?lat=16.993386073509612&lon=79.316785633564, mapping to path=/?lat=16.993386073509612&lon=79.316785633564 {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/agriassistdashboard/us-central1/getSoilData?lat=16.993386073509612&lon=79.316785633564, mapping to path=/?lat=16.993386073509612&lon=79.316785633564"}}
+[debug] [2025-11-08T16:46:56.140Z] [worker-pool] submitRequest(triggerId=us-central1-getSoilData) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-getSoilData)"}}
+[info] i  functions: Beginning execution of "us-central1-getSoilData" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"Beginning execution of \"us-central1-getSoilData\""}}
+[debug] [2025-11-08T16:46:56.142Z] [worker-us-central1-getSoilData-4773f481-1543-435b-b0fd-310798ea6111]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"[worker-us-central1-getSoilData-4773f481-1543-435b-b0fd-310798ea6111]: BUSY"}}
+[debug] [2025-11-08T16:47:02.021Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-getSoilData" in 5879.6192ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"Finished \"us-central1-getSoilData\" in 5879.6192ms"}}
+[debug] [2025-11-08T16:47:02.023Z] [worker-us-central1-getSoilData-4773f481-1543-435b-b0fd-310798ea6111]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"[worker-us-central1-getSoilData-4773f481-1543-435b-b0fd-310798ea6111]: IDLE"}}
+[debug] [2025-11-08T16:47:02.023Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-11-08T16:47:02.023Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-11-08T16:47:02.023Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-08T16:47:11.502Z] [work-queue] {"queuedWork":["/agriassistdashboard/us-central1/getSoilData-2025-11-08T16:47:11.502Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-08T16:47:11.502Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/agriassistdashboard/us-central1/getSoilData-2025-11-08T16:47:11.502Z"],"workRunningCount":1}
+[debug] [2025-11-08T16:47:11.502Z] Accepted request GET /agriassistdashboard/us-central1/getSoilData --> us-central1-getSoilData
+[debug] [2025-11-08T16:47:11.507Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-11-08T16:47:11.507Z] [functions] Got req.url=/agriassistdashboard/us-central1/getSoilData, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/agriassistdashboard/us-central1/getSoilData, mapping to path=/"}}
+[debug] [2025-11-08T16:47:11.507Z] [worker-pool] submitRequest(triggerId=us-central1-getSoilData) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-getSoilData)"}}
+[info] i  functions: Beginning execution of "us-central1-getSoilData" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"Beginning execution of \"us-central1-getSoilData\""}}
+[debug] [2025-11-08T16:47:11.508Z] [worker-us-central1-getSoilData-4773f481-1543-435b-b0fd-310798ea6111]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"[worker-us-central1-getSoilData-4773f481-1543-435b-b0fd-310798ea6111]: BUSY"}}
+[debug] [2025-11-08T16:47:11.511Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-getSoilData" in 3.4017ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"Finished \"us-central1-getSoilData\" in 3.4017ms"}}
+[debug] [2025-11-08T16:47:11.513Z] [worker-us-central1-getSoilData-4773f481-1543-435b-b0fd-310798ea6111]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"[worker-us-central1-getSoilData-4773f481-1543-435b-b0fd-310798ea6111]: IDLE"}}
+[debug] [2025-11-08T16:47:11.513Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-11-08T16:47:11.513Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getSoilData"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-11-08T16:47:11.513Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}

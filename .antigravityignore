@@ -1,0 +1,17 @@
+node_modules/
+.venv/
+__pycache__/
+dist/
+build/
+.git/
+*.pyc
+*.pyo
+*.log
+*.tif
+*.tiff
+*.png
+*.jpg
+*.jpeg
+*.pdf
+data/satellite/
+backend/data/

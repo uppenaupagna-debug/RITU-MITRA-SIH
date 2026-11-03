@@ -1,0 +1,241 @@
+:root {
+  /* 🌾 Brand & Theme Colors — RaituMitra Agricultural Green */
+  --emerald-fusion-1: #10b981;
+  --emerald-fusion-2: #059669;
+  --emerald-fusion-3: #34d399;
+
+  --white: #ffffff;
+  --text-dark: #0f2310;
+  --text-light: #f0fdf4;
+
+  --border-light: rgba(16, 185, 129, 0.3);
+  --border-dark: rgba(5, 150, 105, 0.5);
+
+  --card-light: rgba(255, 255, 255, 0.85);
+  --card-dark: linear-gradient(145deg, #051a0e, #0a2e1a);
+
+  color-scheme: light dark;
+}
+
+/* ==============================
+   🧱 Grid Layout
+   ============================== */
+.card-grid {
+  display: grid;
+  gap: 2rem;
+  padding: 3rem;
+  margin: 0 auto;
+  max-width: 100rem; /* 🔥 Wider layout */
+}
+
+/* Mobile: 1 per row */
+@media (max-width: 599px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tablet: 2 per row */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop: Bento layout */
+@media (min-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 250px; /* 🧱 Taller cells */
+  }
+
+  .card:nth-child(1) {
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 2;
+  }
+
+  .card:nth-child(2) {
+    grid-column: 4 / span 3;
+    grid-row: 1 / span 1;
+  }
+
+  .card:nth-child(3) {
+    grid-column: 4 / span 3;
+    grid-row: 2 / span 1;
+  }
+
+  .card:nth-child(4) {
+    grid-column: 1 / span 6;
+    grid-row: 3 / span 1;
+  }
+}
+
+/* ==============================
+   🪞 Card Design
+   ============================== */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  border-radius: 28px;
+  border: 1px solid var(--border-light);
+  background: var(--card-light);
+  color: var(--text-dark);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.12);
+  backdrop-filter: blur(14px);
+}
+
+@media (prefers-color-scheme: dark) {
+  .card {
+    border: 1px solid var(--border-dark);
+    background: var(--card-dark);
+    color: var(--text-light);
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.18);
+  }
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(16, 185, 129, 0.28);
+}
+
+/* ==============================
+   📝 Text Styling
+   ============================== */
+.card__header {
+  font-weight: 700;
+  font-size: 1.7rem;
+  letter-spacing: 0.6px;
+  margin-bottom: 0.5em;
+}
+
+.card__title {
+  font-size: 2.2rem; /* 🔠 Larger heading */
+  font-weight: 800;
+  display: inline-block;
+  position: relative;
+
+  /* 🌾 Farm Green Shimmer Gradient */
+  background: linear-gradient(
+    90deg,
+    var(--emerald-fusion-1),
+    var(--emerald-fusion-2),
+    var(--emerald-fusion-3),
+    var(--emerald-fusion-1)
+  );
+  background-size: 300% 100%;
+  background-position: 0% 50%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  animation: text-shine 6s linear infinite;
+}
+
+/* Infinite Gradient Sweep */
+@keyframes text-shine {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.card__title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  display: inline-block;
+  position: relative;
+
+  /* 🌿 Agricultural Green Gradient */
+  background: linear-gradient(
+    90deg,
+    #10b981,
+    #059669,
+    #34d399,
+    #10b981
+  );
+  background-size: 300% 100%;
+  background-position: 0% 50%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  /* ✨ Smooth oscillating animation */
+  animation: text-shine 8s ease-in-out infinite;
+}
+
+
+.card__description {
+  font-size: 1.05rem;
+  opacity: 0.9;
+  font-weight: 500;
+  line-height: 1.7;
+  max-width: 90%;
+}
+
+/* Add slight glow in dark mode */
+@media (prefers-color-scheme: dark) {
+  .card__title {
+    text-shadow: 0 0 12px rgba(52, 211, 153, 0.3),
+                 0 0 20px rgba(16, 185, 129, 0.2);
+  }
+}
+
+/* ==============================
+   🌿 Subtle Glow Border
+   ============================== */
+.card--border-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: radial-gradient(
+    circle at var(--glow-x, 50%) var(--glow-y, 50%),
+    rgba(16, 185, 129, 0.4),
+    transparent 70%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.card--border-glow:hover::after {
+  opacity: 1;
+}
+
+/* ==============================
+   🌾 Section Wrapper
+   ============================== */
+.bento-section {
+  position: relative;
+  padding-block: 4em;
+  padding-inline: 2em;
+  border-radius: 40px;
+  background: linear-gradient(
+    135deg,
+    rgba(240, 253, 244, 0.7),
+    rgba(209, 250, 229, 0.4)
+  );
+}
+
+@media (prefers-color-scheme: dark) {
+  .bento-section {
+    background: radial-gradient(
+      circle at 50% 50%,
+      rgba(16, 185, 129, 0.06),
+      transparent 70%
+    );
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "timestamp": "2026-10-28T17:47:30Z",
+  "architecture": "mobilenet_v3_small",
+  "dataset_classes": 38,
+  "total_train_samples": 2280,
+  "total_val_samples": 570,
+  "epochs": 3,
+  "batch_size": 16,
+  "image_size": 160,
+  "best_val_accuracy": 0.8246,
+  "total_training_seconds": 120.6,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.7511,
+      "train_accuracy": 0.5294,
+      "val_loss": 0.7871,
+      "val_accuracy": 0.7526,
+      "duration_seconds": 69.5
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.8207,
+      "train_accuracy": 0.7539,
+      "val_loss": 0.6777,
+      "val_accuracy": 0.8018,
+      "duration_seconds": 26.1
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.6458,
+      "train_accuracy": 0.7965,
+      "val_loss": 0.5221,
+      "val_accuracy": 0.8246,
+      "duration_seconds": 24.9
+    }
+  ]
+}
