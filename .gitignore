@@ -25,3 +25,9 @@ __pycache__/
 *.pkl
 backend/openmeteo_cache.json
 screenshots/
+
+# Local backup files
+*.bak_openquest
+
+# Temporary development scripts
+scratch/
