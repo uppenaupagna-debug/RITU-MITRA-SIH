@@ -367,6 +367,31 @@ export default function EnhancedCropRecommendations() {
   const [riskFilter, setRiskFilter] = useState("");
   const [waterFilter, setWaterFilter] = useState("");
   const [sortBy, setSortBy] = useState("");
+
+  // 🎙️ Voice Navigator Auto-Fill Listener
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem("raitu_autofill_data");
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        localStorage.removeItem("raitu_autofill_data"); // consume once
+        setFilters((prev) => ({
+          ...prev,
+          state: parsed.state || prev.state || "Telangana",
+          district: parsed.district || prev.district || "Hyderabad",
+          soilType: parsed.soilType || prev.soilType || "Clayey",
+          waterSources: parsed.waterSources && parsed.waterSources.length > 0 ? parsed.waterSources : prev.waterSources
+        }));
+        // Trigger recommendation calculation immediately
+        setTimeout(() => {
+          setHasSearched(true);
+        }, 300);
+      }
+    } catch (e) {
+      console.warn("Could not read raitu_autofill_data:", e);
+    }
+  }, []);
+
   // ✅ Auto-load farmer profile if logged in
 useEffect(() => {
   const fetchProfile = async () => {

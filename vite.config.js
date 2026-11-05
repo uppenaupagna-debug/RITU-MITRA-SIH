@@ -75,6 +75,13 @@ export default defineConfig({
     }),
   ],
 
+  server: {
+    allowedHosts: [
+      "localhost",
+      "127.0.0.1",
+      "kingdom-assure-hopkins-toolbar.trycloudflare.com",
+    ],
+  },
   build: {
     chunkSizeWarningLimit: 2000,
   },

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import demoLeaf from "../assets/demo-leaf.jpeg";
 import { useLanguage } from "../context/LanguageContext";
+import { getLocalizedDiseaseData, getLocalizedTop3Item } from "../data/diseaseTranslations";
 import { Camera, Image as ImageIcon, AlertTriangle, CheckCircle, XCircle, Info, RefreshCw } from "lucide-react";
 
 // Use environment variable if available, else localhost:8000
@@ -25,6 +26,17 @@ export default function DiseaseDetect() {
   const [days, setDays] = useState(7);
   const [usage, setUsage] = useState(0);
   const [simulation, setSimulation] = useState(null);
+
+  const localizedBest = React.useMemo(() => {
+    return getLocalizedDiseaseData(resp?.best, language);
+  }, [resp?.best, language]);
+
+  const localizedTop3 = React.useMemo(() => {
+    if (!resp?.top3 || !Array.isArray(resp.top3)) return [];
+    return resp.top3.map((item) => getLocalizedTop3Item(item, language));
+  }, [resp?.top3, language]);
+
+
 
   const fileInputRef = useRef(null);
   const cameraInputRef = useRef(null);
@@ -369,17 +381,23 @@ export default function DiseaseDetect() {
 
           <div>
             <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-              {resp?.status === "rejected_not_plant" && (t("err_not_plant") || "Plant Not Detected")}
-              {resp?.status === "rejected_human" && (t("err_human_detected") || "Person / Unrelated Object Detected")}
-              {resp?.status === "rejected_blank" && "Blank or Low-Contrast Image"}
-              {resp?.status === "unsupported_part" && (t("err_unsupported_part") || "Outside Model Scope: Leaf Only")}
-              {resp?.status === "uncertain" && (t("err_uncertain") || "Uncertain Diagnostic Prediction")}
-              {resp?.status === "model_unavailable" && "Model Checkpoint Unavailable"}
-              {!["rejected_not_plant", "rejected_human", "rejected_blank", "unsupported_part", "uncertain", "model_unavailable"].includes(resp?.status) && "Diagnosis Not Possible"}
+              {resp?.status === "rejected_not_plant" && (t("err_not_plant_title") || t("err_not_plant") || "Plant Not Detected")}
+              {resp?.status === "rejected_human" && (t("err_human_detected_title") || t("err_human_detected") || "Person / Unrelated Object Detected")}
+              {resp?.status === "rejected_blank" && (t("err_blank_title") || t("err_blank") || "Blank or Low-Contrast Image")}
+              {resp?.status === "unsupported_part" && (t("err_unsupported_part_title") || t("err_unsupported_part") || "Outside Model Scope: Leaf Only")}
+              {resp?.status === "uncertain" && (t("err_uncertain_title") || t("err_uncertain") || "Uncertain Diagnostic Prediction")}
+              {resp?.status === "model_unavailable" && (t("err_model_unavailable_title") || t("err_model_unavailable") || "Model Checkpoint Unavailable")}
+              {!["rejected_not_plant", "rejected_human", "rejected_blank", "unsupported_part", "uncertain", "model_unavailable"].includes(resp?.status) && (t("err_diagnosis_not_possible") || "Diagnosis Not Possible")}
             </h3>
 
             <p className="mt-3 text-sm text-gray-700 dark:text-gray-300 leading-relaxed max-w-lg mx-auto">
-              {resp?.message || error || "Please upload a clear photograph of a crop leaf."}
+              {resp?.status === "rejected_not_plant" && (t("err_not_plant_desc") || resp?.message)}
+              {resp?.status === "rejected_human" && (t("err_human_detected_desc") || resp?.message)}
+              {resp?.status === "rejected_blank" && (t("err_blank_desc") || resp?.message)}
+              {resp?.status === "unsupported_part" && (t("err_unsupported_part_desc") || resp?.message)}
+              {resp?.status === "uncertain" && (t("err_uncertain_desc") || resp?.message)}
+              {resp?.status === "model_unavailable" && (t("err_model_unavailable_desc") || resp?.message)}
+              {!["rejected_not_plant", "rejected_human", "rejected_blank", "unsupported_part", "uncertain", "model_unavailable"].includes(resp?.status) && (resp?.message || error || "Please upload a clear photograph of a crop leaf.")}
             </p>
           </div>
 
@@ -390,7 +408,7 @@ export default function DiseaseDetect() {
                 alt="Uploaded"
                 className="max-h-48 rounded object-contain mx-auto"
               />
-              <span className="block text-[11px] text-gray-500 mt-1">Uploaded image</span>
+              <span className="block text-[11px] text-gray-500 mt-1">{t("uploaded_image_tag") || "Uploaded image"}</span>
             </div>
           )}
 
@@ -414,7 +432,7 @@ export default function DiseaseDetect() {
             {/* Real Processed Preview */}
             <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-md border border-gray-200 dark:border-gray-700 p-4">
               <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
-                Processed Crop Image
+                {t("processed_crop_image") || "Processed Crop Image"}
               </h4>
               {resp.leaf_preview ? (
                 <img
@@ -436,7 +454,7 @@ export default function DiseaseDetect() {
               <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-md border border-gray-200 dark:border-gray-700 p-4 space-y-3">
                 <div className="flex items-center justify-between">
                   <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
-                    Neural Attention Map
+                    {t("neural_attention_map") || "Neural Attention Map"}
                   </h4>
                   <button
                     onClick={() => setShowGradcam(!showGradcam)}
@@ -478,7 +496,7 @@ export default function DiseaseDetect() {
               <div>
                 <div className="flex justify-between text-xs text-gray-700 dark:text-gray-300 mb-1">
                   <span>{t("detect_days") || "Days Untreated"}:</span>
-                  <span className="font-bold">{days} days</span>
+                  <span className="font-bold">{days} {t("days_unit") || "days"}</span>
                 </div>
                 <input
                   type="range"
@@ -545,12 +563,12 @@ export default function DiseaseDetect() {
               {getIcon()}
 
               <h3 className="mt-3 text-2xl font-extrabold text-gray-900 dark:text-white">
-                {resp.best.friendly || "Crop Disease Diagnosis"}
+                {(localizedBest?.friendly || resp.best.friendly) || "Crop Disease Diagnosis"}
               </h3>
 
               <div className="mt-2 flex flex-wrap items-center justify-center gap-2 text-xs">
                 <span className="px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 font-semibold border border-emerald-200 dark:border-emerald-800">
-                  {t("detect_crop") || "Crop"}: {resp.best.crop || "Crop"}
+                  {t("detect_crop") || "Crop"}: {localizedBest?.crop || resp.best.crop || "Crop"}
                 </span>
 
                 <span className="px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950 text-blue-800 dark:text-blue-300 font-semibold border border-blue-200 dark:border-blue-800">
@@ -558,7 +576,7 @@ export default function DiseaseDetect() {
                 </span>
 
                 <span className={`px-3 py-1 rounded-full font-semibold border ${getBadgeColor()}`}>
-                  {t("detect_severity") || "Severity"}: {resp.best.severity || "Standard"}
+                  {t("detect_severity") || "Severity"}: {localizedBest?.severity || resp.best.severity || "Standard"}
                 </span>
               </div>
             </div>
@@ -573,19 +591,19 @@ export default function DiseaseDetect() {
             )}
 
             {/* Symptoms */}
-            <Section title={t("detect_symptoms") || "Observed Symptoms"} items={resp.best.symptoms} />
+            <Section title={t("detect_symptoms") || "Observed Symptoms"} items={localizedBest?.symptoms || resp.best.symptoms} />
 
             {/* Recommended First Actions */}
-            <Section title={t("detect_actions") || "Immediate First Actions"} items={resp.best.suggested_actions} />
+            <Section title={t("detect_actions") || "Immediate First Actions"} items={localizedBest?.suggested_actions || resp.best.suggested_actions} />
 
             {/* Cultural & Environmental Remedies */}
-            <Section title={t("detect_cultural") || "Cultural & Environmental Remedies"} items={resp.best.cultural_remedies} />
+            <Section title={t("detect_cultural") || "Cultural & Environmental Remedies"} items={localizedBest?.cultural_remedies || resp.best.cultural_remedies} />
 
             {/* Prevention */}
-            <Section title={t("detect_prevention") || "Prevention & Long-term Care"} items={resp.best.prevention} />
+            <Section title={t("detect_prevention") || "Prevention & Long-term Care"} items={localizedBest?.prevention || resp.best.prevention} />
 
             {/* Cure / IPM Treatment */}
-            <Section title={t("detect_cure") || "Recommended Cure & Care"} items={resp.best.cure} />
+            <Section title={t("detect_cure") || "Recommended Cure & Care"} items={localizedBest?.cure || resp.best.cure} />
 
             {/* Top 3 Differential Diagnoses */}
             {resp.top3 && Array.isArray(resp.top3) && resp.top3.length > 0 && (
@@ -594,7 +612,7 @@ export default function DiseaseDetect() {
                   {t("detect_top3") || "Top Differential Diagnoses"}
                 </h4>
                 <div className="space-y-1.5 text-xs">
-                  {resp.top3.map((tItem, i) => (
+                  {(localizedTop3.length > 0 ? localizedTop3 : resp.top3).map((tItem, i) => (
                     <div key={i} className="flex justify-between items-center bg-white dark:bg-gray-800 p-2.5 rounded-lg border border-gray-100 dark:border-gray-700">
                       <span className="font-medium text-gray-800 dark:text-gray-200">
                         {tItem.friendly || tItem.label?.replace(/___/g, " - ").replace(/_/g, " ")}
@@ -615,7 +633,7 @@ export default function DiseaseDetect() {
                 <span>{t("detect_consult") || "When to Consult an Agricultural Officer"}</span>
               </div>
               <p className="leading-relaxed">
-                {resp.best.consult_threshold || t("detect_consult_text") || "If symptoms spread beyond 25% of the plot within 48 hours, contact your local Mandal Agricultural Officer (MAO) or Rythu Vedika representative immediately."}
+                {(localizedBest?.consult_threshold || resp.best.consult_threshold) || t("detect_consult_text") || "If symptoms spread beyond 25% of the plot within 48 hours, contact your local Mandal Agricultural Officer (MAO) or Rythu Vedika representative immediately."}
               </p>
             </div>
 
@@ -650,7 +668,7 @@ export default function DiseaseDetect() {
             className="w-48 sm:w-56 rounded-xl shadow-md border border-gray-200 dark:border-gray-700"
           />
           <span className="text-[11px] text-gray-500 dark:text-gray-400 mt-2">
-            Sample optimal leaf focus angle
+            {t("sample_focus_angle") || "Sample optimal leaf focus angle"}
           </span>
         </div>
       </div>

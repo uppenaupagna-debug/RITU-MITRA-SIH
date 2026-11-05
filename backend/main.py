@@ -702,6 +702,88 @@ async def get_farmer_logs(uid: str = None, crop_id: str = None):
         raise HTTPException(status_code=500, detail=f"Failed to retrieve logs: {str(e)}")
 
 
+
+# -------------------------------------------------------------
+# 🤖 AGRICULTURE-ONLY CHATBOT ENDPOINT (Domain Specification 4)
+# -------------------------------------------------------------
+class ChatbotRequest(BaseModel):
+    question: str
+    language: str = "te"
+    crop: str = None
+    district: str = None
+
+
+from autofill_engine import FormAutoFillRequest, parse_farmer_intent_and_fields
+
+@app.post("/api/v1/voice/autofill")
+async def voice_autofill(req: FormAutoFillRequest):
+    try:
+        res = parse_farmer_intent_and_fields(req.query, req.language, req.current_profile)
+        return res
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Voice autofill parsing failed: {str(e)}")
+
+
+@app.post("/api/v1/chatbot/ask")
+async def chatbot_ask(req: ChatbotRequest):
+    q = req.question.strip().lower()
+    lang = req.language or "te"
+
+    # Agricultural Scope Verification Check
+    non_agri_keywords = ["movie", "cinema", "cricket", "politics", "president", "bitcoin", "crypto", "actor", "hero", "song", "dance"]
+    if any(k in q for k in non_agri_keywords):
+        if lang == "te":
+            return {"answer": "క్షమించండి, నేను వ్యవసాయం మరియు రైతు సలహాలకు సంబంధించిన ప్రశ్నలకు మాత్రమే సమాధానం ఇవ్వగలను. దయచేసి పంట తెగుళ్లు, వాతావరణం, ఎరువులు లేదా మార్కెట్ ధరల గురించి అడగండి."}
+        elif lang == "hi":
+            return {"answer": "क्षमा करें, मैं केवल कृषि और किसान परामर्श संबंधी प्रश्नों का उत्तर दे सकता हूँ। कृपया फसल, खाद, मौसम या मंडी भाव के बारे में पूछें।"}
+        else:
+            return {"answer": "I am specialized strictly in agriculture and rural advisory. Please ask queries regarding crop diseases, weather, soil nutrients, or mandi prices."}
+
+    # 1. Tomato disease / leaf spots
+    if any(k in q for k in ["మచ్చ", "tomato", "టమాట", "टमाटर", "leaf mold", "early blight"]):
+        if lang == "te":
+            return {"answer": "టమాట ఆకు మచ్చల నివారణ: 1. ఆకు వెనుక బూజు ఉంటే లీఫ్ మోల్డ్ తెగులు కావచ్చు. 2. గాలి వెలుతురు సోకేలా కింద ఉన్న కొమ్మలను కత్తిరించండి. 3. డ్రిప్ ద్వారా మాత్రమే నీరందించండి. 4. కాపర్ ఆక్సిక్లోరైడ్ 50 WP (2.5 గ్రా/లీ) లేదా మాంకోజెబ్ (2.5 గ్రా/లీ) పిచికారీ చేయండి. రోగ నిర్ధారణ కోసం మా AI Disease Detect పేజీలో ఆకు ఫోటో తీసి నిర్ధారించుకోండి."}
+        elif lang == "hi":
+            return {"answer": "टमाटर के पत्तों पर धब्बे: 1. हवा के संचार हेतु निचली पत्तियों की छंटाई करें। 2. पत्तियों पर पानी न डालें, केवल ड्रिप से पानी दें। 3. कॉपर ऑक्सीक्लोराइड (2.5 ग्राम/लीटर) या मैंकोजेब (2.5 ग्राम/लीटर) का छिड़काव करें। सटीक जांच के लिए हमारे AI Disease Detect पेज पर फोटो अपलोड करें।"}
+        else:
+            return {"answer": "For tomato leaf spots: 1. Prune lower canopy foliage to increase ventilation. 2. Use drip irrigation; avoid foliar wetting. 3. Spray Copper Oxychloride (2.5 g/L) or Mancozeb (2.5 g/L). Upload a photo to our Disease Detection tool for neural verification."}
+
+    # 2. Weather and Rain
+    if any(k in q for k in ["వర్షం", "weather", "వాతావరణం", "मौसम", "rain", "forecast"]):
+        if lang == "te":
+            return {"answer": "వాతావరణం & వర్షపాత సలహా: రాబోయే 7 రోజుల ఖచ్చితమైన వాతావరణం తెలుసుకోవడానికి మా 'Weather & Rainfall Advisory' పేజీని చూడండి. వర్ష సూచన ఉన్నప్పుడు ఎరువుల పైపాటు వేయడం లేదా పురుగుమందుల పిచికారీని 24 గంటలు వాయిదా వేయండి."}
+        elif lang == "hi":
+            return {"answer": "मौसम परामर्श: आगामी 7 दिनों के सटीक वर्षा व तापमान पूर्वानुमान के लिए हमारा 'Weather Advisory' पेज देखें। यदि वर्षा की संभावना हो तो छिड़काव एवं खाद डालना 24 घंटे टालें।"}
+        else:
+            return {"answer": "Weather Advisory: Consult our live 7-day Weather & Rainfall Advisory. Avoid spraying chemical pesticides or applying urea top-dressing if rain is anticipated within 24 hours."}
+
+    # 3. Market and Mandi Prices
+    if any(k in q for k in ["ధర", "మార్కెట్", "మండి", "అమ్మాలి", "भाव", "मंडी", "दाम", "price", "market", "mandi"]):
+        if lang == "te":
+            return {"answer": "మార్కెట్ సలహా: ప్రస్తుత మార్కెట్ యార్డుల ధరలను తెలుసుకోవడానికి మా 'Market Prices & Mandi Information' విభాగాన్ని చూడండి. టమాట క్వింటాల్ కు సగటున ₹1,800 - ₹2,400 మరియు వరి క్వింటాల్ కు కనీస మద్దతు ధర (MSP) ₹2,183 - ₹2,203 గా నమోదైంది. సమీప మార్కెట్ ధరలు సరిచూసి రవాణా చేయండి."}
+        elif lang == "hi":
+            return {"answer": "मंडी परामर्श: कृषि उपज मंडी में आज के वास्तविक भाव देखने के लिए 'Market Prices' सेक्शन देखें। टमाटर का औसत थोक भाव ₹1,800 - ₹2,400 प्रति क्विंटल तथा धान का न्यूनतम समर्थन मूल्य (MSP) ₹2,183 - ₹2,203 दर्ज है।"}
+        else:
+            return {"answer": "Market Advisory: Visit our Market Insights module for verified eNAM/Agmarknet mandi rates. Compare neighboring mandi modal prices before transporting harvested produce."}
+
+    # 4. Rice Blast / Blast disease
+    if any(k in q for k in ["వరి", "blast", "అగ్గి", "धान", "rice"]):
+        if lang == "te":
+            return {"answer": "వరి అగ్గి తెగులు (Rice Blast) నివారణ: 1. నత్రజని (యూరియా) వాడకాన్ని తగ్గించండి. 2. పొలంలో నీటి తేమను నిలకడగా ఉంచండి. 3. ట్రైసైక్లాజోల్ 75 WP (Tricyclazole 0.6 గ్రా/లీ) లేదా ఐసోప్రోథియోలేన్ (1.5 మి.లీ/లీ) పిచికారీ చేయండి."}
+        elif lang == "hi":
+            return {"answer": "धान का झोंका (ब्लास्ट) रोग: 1. यूरिया की मात्रा कम करें। 2. खेत में पर्याप्त नमी बनाए रखें। 3. ट्राइसाइक्लाजोल 75 WP (0.6 ग्राम/लीटर) का छिड़काव करें।"}
+        else:
+            return {"answer": "Rice Blast Management: 1. Reduce top-dressed nitrogen fertilizer. 2. Maintain continuous shallow standing water. 3. Foliar spray of Tricyclazole 75 WP (0.6 g/L)."}
+
+    # Default agriculture guidance
+    if lang == "te":
+        return {"answer": "వ్యవసాయ సలహా: ఖచ్చితమైన విశ్లేషణ కోసం మీ పంట ఆకు ఫోటో తీసి Disease Detect లో పరీక్షించవచ్చు లేదా లైవ్ వాతావరణాన్ని తనిఖీ చేయవచ్చు. మరింత సహాయానికి కిసాన్ కాల్ సెంటర్ 1800-180-1551 ను సంప్రదించండి."}
+    elif lang == "hi":
+        return {"answer": "कृषि परामर्श: सटीक समाधान हेतु फसल की पत्ती की फोटो Disease Detect में जांचें अथवा मौसम पूर्वानुमान देखें। त्वरित सहायता हेतु किसान कॉल सेंटर 1800-180-1551 पर कॉल करें।"}
+    else:
+        return {"answer": "Agri Advisory: For verified leaf analysis, use our AI Disease Detection scanner. For regional extension support, dial toll-free Kisan Call Center at 1800-180-1551."}
+
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True) 
